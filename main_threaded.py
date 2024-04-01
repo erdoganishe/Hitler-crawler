@@ -41,7 +41,7 @@ def result(start, end, path):
 
 def main():
     start = "https://en.wikipedia.org/wiki/European_cuisine"
-    end = "https://en.wikipedia.org/wiki/Illiosentidae"
+    end = "https://en.wikipedia.org/wiki/Adolf_Hitler"
     print("started")
     start_time = time.time()
 

@@ -25,7 +25,7 @@ Brute force optimised ~ + 1 hour:
     For 4+ redirects is still too long.
 
 
-Brute force optimised + multiprocessing
+Brute force optimised + multiprocessing  ~ + 1 hour: 
 
     Previous version, but multiprocessing added.
 
@@ -40,4 +40,3 @@ Brute force optimised + multiprocessing
     Also it will depends on hardware and current running processes on PC because we use a lot amount of memory & processing.
     For 4 redirects may work, but still will be too long for usage (will be tested later).
 
-    

@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}
+        Hitler crawler
+      {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+  </head>
+  <body>
+    <header>
+        <h2>Hitler Crawler</h2>
+    </header>
+    <main>
+        <form  method = "POST" class = "container">
+          {% csrf_token %}
+
+            <input class = "link-input" placeholder = "Paste URL">
+
+            <div class = line>
+                <input type="checkbox" class = "database-input">
+                Use Database
+            </div>
+
+            <input type = "submit" class = "send-button" value = "Find Path">
+            
+            <label class = "text-label"> Waiting for link...</label>
+          
+              <table class = "result-table">
+              
+              </table>
+
+
+          </form>
+    </main>
+    <script src = "{% static 'script.js' %}"></script>
+  </body>
+</html>
+ 
