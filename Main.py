@@ -64,8 +64,9 @@ def redirected(end):
 
 def main():
     start = "https://en.wikipedia.org/wiki/Oreo"
-    end = "https://en.wikipedia.org/wiki/Salem_witch_trials"
+    end = "https://en.wikipedia.org/wiki/Adolf_Hitler"
 
+    print("started")
     starttime = time.time()
 
     path = find_shortest_path(start, redirected(end))
