@@ -4,8 +4,6 @@ from bs4 import BeautifulSoup
 from collections import deque
 from concurrent.futures import ThreadPoolExecutor
 import csv
-from hitler.settings import XMLFILES_FOLDER
-
 
 def get_links(page):
     r = requests.get(page)
@@ -14,7 +12,7 @@ def get_links(page):
     links = list({base_url + a['href'] for a in soup.select('p a[href]') if a['href'].startswith('/wiki/')})
     return links
 
-def import_db(filename =  XMLFILES_FOLDER+'db.csv'):
+def import_db(filename = 'db.csv'):
     with open(filename, 'r') as file:
         reader = csv.reader(file)
         rows = []
@@ -83,18 +81,15 @@ def result(start, end, path):
     d = {"start": start, "end": end, "path": result}
     return d
 
-def get_path(start, use_db = True):
-
+def main(use_db):
+    start = "https://en.wikipedia.org/wiki/Special:Random"
     end = "https://en.wikipedia.org/wiki/Adolf_Hitler"
 
-    start_time = time.time()
     if (use_db):
         path = find_shortest_path_with_db(start, end)
     else:
         path = find_shortest_path(start, end)
 
-    end_time = time.time()
-    return {
-        "path": path,
-        "elapsed_time": end_time - start_time
-    }
+    print(path)
+
+main(True)

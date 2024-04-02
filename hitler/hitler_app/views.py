@@ -15,6 +15,6 @@ def hitler_set(request):
         jsonData = json.loads(request.body)
         jsonLink = jsonData["link"]
 
-        responce = get_path(jsonLink)
+        responce = get_path(jsonLink, jsonData["isDB"])
 
         return JsonResponse(responce)
