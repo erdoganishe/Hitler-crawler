@@ -63,10 +63,20 @@ Database addition ~ + 2 0.5 hours (5 hours to fill db)
     
 
 
-Deployment
+Deployment ~3 hours
 
     Web server for our task created with Django Framework with design pattern MVT.
+    It just small one-page site, which sends request with path and database option to server and gets responce as path and elapsed time. 
 
+    Setuping this project is the same as any Django Project.
+
+    Go to Django root folder:
+        cd .\hitler\
+    then start local server:
+        py .\manage.py runserver
+    Deployed server will be at http://127.0.0.1:8000/.
+    
+    
 Some Showcases:
 
 ![My Image](img/1.jpg)
