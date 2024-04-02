@@ -38,5 +38,12 @@ Brute force optimised + multiprocessing  ~ + 1 hour:
         AVG performance: ~45s
 
     Also it will depends on hardware and current running processes on PC because we use a lot amount of memory & processing.
-    For 4 redirects may work, but still will be too long for usage (will be tested later).
+    For 4 redirects may work, but still will be too long for usage (~40000s, almost 12 hours), tested once.
 
+
+
+
+
+###Deployment
+
+    Web server for our task created with Django Framework with design pattern MVT.  

@@ -73,8 +73,8 @@ input{
 }
 
 .result-table{
-    color: white;
-    width: 600px;
+    color: black;
+    width: 800px;
     font-size: 25px;
     align-self: center;
     border-radius: 10px;
@@ -83,13 +83,15 @@ input{
 
 
 .result-table tr:nth-child(even) {
-    background-color: #530544;
+    background-color: #eb84d730;
+
     border: 5px solid #ad008d;
 }
 
 
 .result-table tr:nth-child(odd) {
-    background-color: #ad008d; 
+    background-color: #ad008d30;
+ 
     border: 5px solid #530544;
 }
 

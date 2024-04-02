@@ -3,6 +3,8 @@ import requests
 from bs4 import BeautifulSoup
 from collections import deque
 from concurrent.futures import ThreadPoolExecutor
+import csv
+
 
 def get_links(page):
     r = requests.get(page)
@@ -10,6 +12,7 @@ def get_links(page):
     base_url = page[:page.find('/wiki/')]
     links = list({base_url + a['href'] for a in soup.select('p a[href]') if a['href'].startswith('/wiki/')})
     return links
+
 
 def find_shortest_path(start, end):
     path = {}
@@ -27,9 +30,14 @@ def find_shortest_path(start, end):
 
                 if (link not in path) and (link != page):
                     path[link] = path[page] + [link]
+
+                    if len(path[link]) == 4:
+                        return None
+
                     Q.append(link)
 
     return None
+
 
 def result(start, end, path):
     if path:
@@ -39,21 +47,28 @@ def result(start, end, path):
     d = {"start": start, "end": end, "path": result}
     return d
 
-def main():
-    start = "https://en.wikipedia.org/wiki/Alpaca"
-    end = "https://en.wikipedia.org/wiki/Czech_phonology"
 
+def write_to_db(element, file_path):
+    with open(file_path, 'r', newline='') as file:
+        reader = csv.reader(file)
+
+        if not any(element in row for row in reader):
+            with open(file_path, 'a', newline='') as file:
+                writer = csv.writer(file)
+
+                writer.writerow([element])
+
+
+def main():
+    start = "https://en.wikipedia.org/wiki/Special:Random"
+    end = "https://en.wikipedia.org/wiki/Adolf_Hitler"
 
     while True:
         print("started")
-        start_time = time.time()
-
         path = find_shortest_path(start, end)
         print(path)
-
-        end_time = time.time()
-        print(end_time - start_time)
-
+        if path:
+            write_to_db(path[-2], 'db.csv')
 
 
 main()

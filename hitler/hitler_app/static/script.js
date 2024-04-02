@@ -60,7 +60,7 @@ button.addEventListener("click", async () => {
     for (var i = 0;i < path.length; i++){
         var row = table.insertRow()
         var cell = row.insertCell(0)
-        cell.innerHTML = path[i] 
+        cell.innerHTML = i+1 + ") " + path[i] 
     }
 
 })
