@@ -69,3 +69,7 @@ Deployment
 
 Some Showcases:
 
+![My Image](img/1.jpg)
+![My Image](img/2.jpg)
+![My Image](img/3.jpg)
+![My Image](img/4.jpg)
