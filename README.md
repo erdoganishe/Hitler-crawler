@@ -67,3 +67,5 @@ Deployment
 
     Web server for our task created with Django Framework with design pattern MVT.
 
+Some Showcases:
+
