@@ -6,7 +6,7 @@ Brute force - ~1,5 hours:
     For this executing time for 3 redirects ~2200s, ~7s for 2 redirects
     For 4+ redirects is too long.
 
-Brute force optimised ~ + 1 hour: 
+Brute force optimised ~ +1 hour: 
 
     Optimised version of brute force:
 
@@ -25,7 +25,7 @@ Brute force optimised ~ + 1 hour:
     For 4+ redirects is still too long.
 
 
-Brute force optimised + multiprocessing  ~ + 1 hour: 
+Brute force optimised + multiprocessing  ~ +1 hour: 
 
     Previous version, but multiprocessing added.
 
@@ -40,7 +40,7 @@ Brute force optimised + multiprocessing  ~ + 1 hour:
     Also it will depends on hardware and current running processes on PC because we use a lot amount of memory & processing.
     For 4 redirects may work, but still will be too long for usage (~40000s, almost 12 hours), tested once.
 
-Database addition ~ + 2 0.5 hours (5 hours to fill db)
+Database addition ~ +0.5 hours (5 hours to fill db)
 
     Before this option, program works for searching path for any 2 links.
     Database optimizes only "Hitler" path.
